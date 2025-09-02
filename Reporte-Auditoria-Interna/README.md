@@ -55,7 +55,7 @@ Acción Correctiva Recomendada: Revocar inmediatamente los permisos de acceso de
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Hallazgo 4: Revocación de acceso de ex empleado Pedro López.
+Hallazgo 4: Revocación de acceso de exempleado Pedro López.
 
 Política Relacionada: Revisión de Accesos.
 
