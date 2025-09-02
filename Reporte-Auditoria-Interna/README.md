@@ -49,13 +49,13 @@ Política Relacionada: Principio de Mínimo Privilegio.
 
 Estado: No Cumple.
 
-Análisis del Riesgo: El acceso no autorizado a información sensible representa un riesgo de fuga de datos y robo de propiedad intelectual. Este acceso excesivo viola el principio de mínimo privilegio y crea una superficie de ataque innecesariamente grande.
+Análisis del Riesgo: El acceso no autorizado a información sensible representa un riesgo de filtración de datos y robo de propiedad intelectual. Este acceso excesivo viola el principio de mínimo privilegio y crea una superficie de ataque muy grande.
 
-Acción Correctiva Recomendada: Revocar inmediatamente los permisos de acceso de Sofía Romero a la base de datos financiera. Se debe realizar una revisión para garantizar que los permisos se ajusten a las funciones laborales.
+Acción Correctiva Recomendada: Revocar inmediatamente los permisos de acceso de Sofía Romero a la base de datos financiera. Se debe realizar una revisión para garantizar que los permisos se ajusten solo a sus funciones laborales.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Hallazgo 4: Revocación de acceso de Pedro López.
+Hallazgo 4: Revocación de acceso de ex empleado Pedro López.
 
 Política Relacionada: Revisión de Accesos.
 
@@ -68,7 +68,7 @@ Análisis del Riesgo: La deshabilitación oportuna de la cuenta de un ex emplead
 Recomendaciones Finales de Mitigación
 Con base en los hallazgos, se recomiendan las siguientes acciones para fortalecer la postura de seguridad de la empresa:
 
-Revisión y Fortalecimiento de la Política de Contraseñas: Usar una política de contraseñas más robusta y considerar la implementación de un gestor de contraseñas corporativo.
+Revisión y Fortalecimiento de la Política de Contraseñas: Usar una política de contraseñas más robustas y considerar la implementación de un gestor de contraseñas corporativo.
 
 Capacitación Continua del Personal: Realizar sesiones de concientización sobre ingeniería social y ataques de phishing.
 
