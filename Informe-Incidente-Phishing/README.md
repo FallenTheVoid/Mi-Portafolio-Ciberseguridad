@@ -1,32 +1,8 @@
-Caso: Ataque de Phishing a una Empresa de Software
+Ataque de Phishing a una Empresa de Software
 
-Contexto
+Se ha identificado y contenido un ataque de phishing dirigido a los empleados de Tech Solutions S.A.S. Un ataque de ingeniería social resultó en el compromiso de las credenciales de un empleado del área de Contabilidad, lo que condujo a una transacción fraudulenta por un valor de $5,000 USD. La respuesta inicial incluyó la inmediata revocación de las credenciales de la cuenta comprometida y el inicio de una investigación para identificar la magnitud del ataque. El análisis de los hallazgos subraya la vulnerabilidad de la empresa ante ataques basados en el factor humano y resalta la necesidad de implementar una capacitación de concientización en ciberseguridad para todo el personal.
 
-Eres un analista de ciberseguridad junior en una empresa llamada "Tech Solutions S.A.S.", que se especializa en el desarrollo de software como servicio (SaaS). Hoy es lunes por la mañana y el equipo de IT te informa de una situación anómala.
-
-Incidente
-
-A las 9:00 a.m. recibes un correo electrónico del Gerente General, el Sr. Carlos Gómez, en el que te pide que investigues un correo sospechoso. El correo fue enviado a varios empleados de la empresa, incluyendo al Director Financiero.
-
-El asunto del correo era: "URGENTE: Actualización de Credenciales de Microsoft 365".
-
-El cuerpo del mensaje contenía un texto que solicitaba a los empleados hacer clic en un enlace para "actualizar su contraseña" debido a una supuesta "brecha de seguridad detectada". El enlace en el correo dirigía a una página que se veía exactamente igual a la página de inicio de sesión de Microsoft 365.
-
-Un empleado del área de Contabilidad, la Sra. Ana Pérez, hizo clic en el enlace y, preocupada, ingresó sus credenciales. Minutos después, recibió una alerta de su banco informándole de una transacción inusual por un monto de $5,000 USD a una cuenta desconocida.
-
-Tus Tareas
-
-Basado en la información anterior, responde las siguientes preguntas como si estuvieras en tu primer día de trabajo como analista de seguridad:
-
-Identificación del Incidente: ¿Qué tipo de ciberataque es este? ¿Qué lo hace tan peligroso, especialmente en este caso?
-
-Respuesta Inicial: ¿Cuáles serían tus tres acciones inmediatas para contener el incidente? Piensa en qué es lo primero que harías para detener el daño.
-
-Investigación y Análisis: ¿Qué evidencias buscarías para entender la magnitud del ataque? Menciona al menos tres puntos de evidencia (por ejemplo, registros, archivos, etc.).
-
-Recomendaciones de Mitigación: ¿Qué recomendaciones harías a la empresa para evitar que un incidente similar vuelva a ocurrir en el futuro? Piensa tanto en la tecnología como en la educación de los empleados.
-
-Respuesta
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Identificación del Incidente
 
