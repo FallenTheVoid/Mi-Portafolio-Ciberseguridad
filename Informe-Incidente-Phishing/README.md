@@ -1,6 +1,6 @@
 Ataque de Phishing a una Empresa de Software
 
-Se ha identificado y contenido un ataque de phishing dirigido a los empleados de Tech Solutions S.A.S. Un ataque de ingeniería social resultó en el compromiso de las credenciales de un empleado del área de Contabilidad, lo que condujo a una transacción fraudulenta por un valor de $5,000 USD. La respuesta inicial incluyó la inmediata revocación de las credenciales de la cuenta comprometida y el inicio de una investigación para identificar la magnitud del ataque. El análisis de los hallazgos subraya la vulnerabilidad de la empresa ante ataques basados en el factor humano y resalta la necesidad de implementar una capacitación de concientización en ciberseguridad para todo el personal.
+Se ha identificado y contenido un ataque de phishing dirigido a los empleados de Tech Solutions S.A.S. Mediante un correo electrónico de ingeniería social, un atacante obtuvo las credenciales de un empleado al engañarlo para que hiciera clic en un enlace de supuesta recuperación de cuenta. Esto resultó en una transacción fraudulenta de $5,000 USD.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
