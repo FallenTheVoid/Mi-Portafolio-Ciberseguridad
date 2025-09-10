@@ -24,6 +24,10 @@ Basado en el análisis, se proponen dos mejoras de control para fortalecer la se
 
 - Revisión Periódica de Permisos AC-6(5): Establecer revisiones automáticas para revocar el acceso a los documentos confidenciales una vez que las asignaciones de trabajo hayan finalizado.
 
+- Fechas de caducidad en enlaces: Crear una política que establezca fechas de caducidad automáticas para todos los enlaces de acceso compartido.
+
+- Auditoría de acceso: Exigir a los gestores que realicen auditorías regulares para revisar quién puede acceder a sus archivos.
+
 **Justificación**
 
-Estas mejoras reducirán la probabilidad de futuras filtraciones al garantizar que el acceso a la información sea revocado de manera oportuna. La implementación de la separación de tareas y la revisión de permisos reducirán significativamente el riesgo de que un solo error humano resulte en una exposición de datos.
+Estas mejoras reducirán la probabilidad de futuras filtraciones al garantizar que el acceso a la información sea revocado de manera oportuna. La implementación de una política de fechas de caducidad en los enlaces, la separación de tareas, la revisión de permisos y las auditorías regulares reducirán significativamente el riesgo de que un solo error humano resulte en una exposición de datos.
