@@ -2,7 +2,7 @@
 
 **Resumen del Proyecto**
 
-Este script en Bash forma parte de una herramienta de análisis post-incidente diseñada para entornos Linux. Su propósito es detectar indicadores de compromiso (IOCs), como hashes de archivos maliciosos y direcciones IP vinculadas a servidores de comando y control (C&C).
+Este script en Bash forma parte de una herramienta de análisis post-incidente diseñada para entornos Linux. Su propósito es detectar indicadores de compromiso (IOC), como hashes de archivos maliciosos y direcciones IP vinculadas a servidores de comando y control (C&C).
 
 Automatiza la búsqueda de evidencia en el sistema, lo que permite una respuesta rápida y precisa ante posibles infecciones. Gracias a su enfoque basado en firmas, este módulo resulta ideal para complementar soluciones de monitoreo en tiempo real.
 
