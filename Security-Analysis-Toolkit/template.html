@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Análisis de Seguridad</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; background-color: #f4f4f9; color: #333; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1, h2 { color: #445; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+        h1 { text-align: center; }
+        .report-meta { font-size: 0.9em; color: #777; text-align: center; margin-bottom: 20px; }
+        .host-block { margin-bottom: 30px; border: 1px solid #eee; border-radius: 5px; padding: 15px; }
+        .host-title { font-size: 1.5em; color: #0056b3; }
+        .section-title { font-weight: bold; margin-top: 15px; color: #333; }
+        ul { list-style-type: none; padding-left: 0; }
+        li { background: #f9f9f9; border: 1px solid #ddd; margin-bottom: 5px; padding: 10px; border-radius: 4px; }
+        .malicioso { color: red; font-weight: bold; }
+        .seguro { color: green; }
+        .inaccesible { color: orange; }
+        .alerta { color: #d9534f; font-weight: bold; }
+        footer { text-align: center; margin-top: 30px; font-size: 0.8em; color: #aaa; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Reporte de Análisis de Seguridad</h1>
+        <div class="report-meta">Generado el: {{ fecha_reporte }}</div>
+
+        {% for host_data in results %}
+        <div class="host-block">
+            <h2 class="host-title">Objetivo: {{ host_data.host }}</h2>
+            
+            <p class="section-title">Reputación:</p>
+            <ul>
+                <li><strong>Estado:</strong> <span class="{{ host_data.reputacion.reputacion }}">{{ host_data.reputacion.reputacion }}</span></li>
+                <li><strong>Motivo:</strong> {{ host_data.reputacion.motivo }}</li>
+            </ul>
+
+            <p class="section-title">Cabeceras HTTP:</p>
+            <ul>
+            {% if host_data.headers and not host_data.headers.error %}
+                {% for key, value in host_data.headers.items() %}
+                <li><strong>{{ key }}:</strong> {{ value }}</li>
+                {% endfor %}
+            {% else %}
+                <li>Error: {{ host_data.headers.error }}</li>
+            {% endif %}
+            </ul>
+
+            <p class="section-title">Puertos Comunes:</p>
+            <ul>
+            {% if host_data.ports %}
+                {% for port in host_data.ports %}
+                <li>
+                    Puerto {{ port.puerto }} ({{ port.servicio }}): <strong>{{ port.estado }}</strong>
+                    {% if port.alerta %}
+                        <span class="alerta">-> ALERTA: {{ port.alerta }}</span>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            {% else %}
+                <li>No se encontraron puertos abiertos o con errores.</li>
+            {% endif %}
+            </ul>
+        </div>
+        {% endfor %}
+
+        <footer>Reporte generado por la Herramienta de Análisis © Richard Labs</footer>
+    </div>
+</body>
+</html>
