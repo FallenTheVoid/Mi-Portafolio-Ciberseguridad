@@ -1,0 +1,4 @@
+ttkbootstrap
+requests
+jinja2
+pdfkit
