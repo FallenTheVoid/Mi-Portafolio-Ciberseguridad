@@ -16,7 +16,7 @@ def generate_report(scan_results):
         str | None: La ruta al archivo HTML generado o None si hay un error.
     """
     try:
-        # --- CAMBIO: Generar nombre de archivo único ---
+        # Genera nombre de archivo único
         timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         output_filename = f"reporte_seguridad_{timestamp}.html"
 
