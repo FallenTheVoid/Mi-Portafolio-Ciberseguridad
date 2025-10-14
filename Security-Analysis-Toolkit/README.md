@@ -78,3 +78,7 @@ Nació de la necesidad de automatizar tareas repetitivas en el análisis de segu
     * `pdfkit`: Para la conversión de HTML a PDF.
 * **Dependencia Externa:**
     * `wkhtmltopdf`: Herramienta de línea de comandos requerida por `pdfkit`.
+*  **Entorno de desarrollo:** Este proyecto fue creado dentro de un entorno virtual (`venv`) para aislar dependencias y evitar conflictos con el Python del sistema, especialmente en distribuciones como Kali Linux (PEP 668).
+
+
+    
