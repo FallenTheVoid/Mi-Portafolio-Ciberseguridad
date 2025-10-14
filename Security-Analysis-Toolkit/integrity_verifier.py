@@ -1,4 +1,3 @@
-# integrity_verifier.py
 import hashlib
 import json
 
