@@ -1,4 +1,3 @@
-# backup_manager.py
 import os
 import zipfile
 from datetime import datetime
