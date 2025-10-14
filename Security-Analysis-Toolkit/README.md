@@ -2,9 +2,10 @@
 
 ## Introducción
 
-Esta es una herramienta de análisis de seguridad multifuncional desarrollada en Python con una interfaz gráfica de usuario (GUI) creada con `ttkbootstrap`. El proyecto simula un flujo de trabajo realista de un Centro de Operaciones de Seguridad (SOC), permitiendo a los analistas escanear objetivos, generar reportes profesionales, y asegurar la integridad de los datos generados.
+Esta es una herramienta de análisis de seguridad multifuncional, está desarrollada en Python y cuenta con una interfaz gráfica (GUI) construida con ttkbootstrap. El proyecto simula un flujo de trabajo realista de un Centro de Operaciones de Seguridad (SOC), permitiendo a los analistas escanear objetivos, generar informes profesionales y verificar la integridad de los datos generados.
 
-Nacido de la necesidad de automatizar tareas repetitivas de análisis de seguridad, este proyecto evolucionó hasta convertirse en una completa herramienta multifuncional con interfaz gráfica. Fue diseñado como una pieza de portafolio para demostrar para demostrar habilidades en desarrollo de software, automatización y conceptos fundamentales de ciberseguridad.
+Nació de la necesidad de automatizar tareas repetitivas en el análisis de seguridad, y evolucionó hasta convertirse en una solución integral con interfaz gráfica. Está diseñada como pieza de portafolio para demostrar habilidades en desarrollo de software, automatización y fundamentos clave de ciberseguridad.
+
 
 ## Características Principales
 
