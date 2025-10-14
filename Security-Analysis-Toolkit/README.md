@@ -1,4 +1,4 @@
-# Herramienta de Análisis de Seguridad Modular
+# SecuScan
 
 ## Introducción
 
