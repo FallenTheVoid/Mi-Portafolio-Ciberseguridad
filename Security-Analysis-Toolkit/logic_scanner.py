@@ -1,4 +1,3 @@
-# logic_scanner.py
 import threading
 import json
 from datetime import datetime
