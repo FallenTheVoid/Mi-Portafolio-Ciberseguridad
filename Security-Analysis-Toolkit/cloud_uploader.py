@@ -1,4 +1,3 @@
-# cloud_uploader.py
 from tkinter import messagebox
 
 def upload_backup_to_cloud(filepath, parent_window):
