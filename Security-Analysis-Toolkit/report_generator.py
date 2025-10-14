@@ -1,4 +1,3 @@
-# report_generator.py
 from jinja2 import Environment, FileSystemLoader
 from datetime import datetime
 import webbrowser
