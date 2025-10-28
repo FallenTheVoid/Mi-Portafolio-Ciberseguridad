@@ -64,6 +64,37 @@ Zero Trust (Regla): Se implementó una regla de Bloqueo Explícito que prohíbe 
 
 <img width="1158" height="115" alt="image" src="https://github.com/user-attachments/assets/ae7a2685-65a5-4b37-bc23-6f9ed5ca7db1" />
 
+## Pruebas de Validación y Arquitectura ZERO TRUST
 
+Se realizaron pruebas de penetración utilizando la Máquina Atacante Kali Linux para validar la efectividad del firewall y se uso la maquina Admin-WorkStation para validar la efectividad de la política de Zero Trust contra un intruso simulado.
+
+**Ocultamiento del Firewall Escaneo de Gateway**
+Esta prueba verificó que el gateway de la VLAN_SERVERS (10.0.10.1) estuviera oculto de la máquina atacante, impidiendo la identificación de servicios.
+
+Ejecutado por: Máquina Atacante Kali Linux
+
+Comando usado: nmap -p 22,80,443 10.0.10.1
+
+<img width="675" height="386" alt="image" src="https://github.com/user-attachments/assets/0501d11c-9f50-4fae-842b-68df90e950a6" />
+
+Resultado: Todos los puertos fueron reportados como filtered.
+
+Conclusión: El firewall de pfSense descartó los paquetes sin enviar respuesta, logrando ocultamiento total (filtered) y frustrando el intento de mapeo de servicios.
+
+
+**Prueba 2: Prevención de Movimiento Lateral (Escaneo de Servidor)**
+
+Esta es la prueba principal que valida la Regla Zero Trust (Capa 5): confirmar que el atacante (VLAN Usuarios) no puede alcanzar un servidor crítico en la VLAN Servidores (10.0.10.5).
+
+Ejecutado por: Maquina atacante Admin-WorkStation 
+
+Comando: nmap -A -T4 10.0.10.5
+
+<img width="677" height="473" alt="image" src="https://github.com/user-attachments/assets/8263bb4c-0133-43c9-98d7-b994f2c26619" />
+
+
+Resultado: Host seems down. If it is really up, but blocking our ping probes, try -Pn y Nmap done: 1 IP address (0 hosts up).
+
+El firewall descartó el tráfico ICMP y TCP del Nmap (lo que hace que el host parezca "down"), confirmando que la Workstation NO PUDO alcanzar el Servidor.
 
 
