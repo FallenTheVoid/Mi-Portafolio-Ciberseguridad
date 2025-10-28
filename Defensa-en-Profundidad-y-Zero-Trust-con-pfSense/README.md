@@ -69,7 +69,7 @@ Zero Trust (Regla): Se implementó una regla de Bloqueo Explícito que prohíbe 
 Se realizaron pruebas de penetración utilizando la Máquina Atacante Kali Linux para validar la efectividad del firewall y se uso la maquina Admin-WorkStation para validar la efectividad de la política de Zero Trust contra un intruso simulado.
 
 **Ocultamiento del Firewall Escaneo de Gateway**
-Esta prueba verificó que el gateway de la VLAN_SERVERS (10.0.10.1) estuviera oculto de la máquina atacante, impidiendo la identificación de servicios.
+Esta prueba verificó que el gateway de la VLAN_SERVERS 10.0.10.1 estuviera oculto de la máquina atacante, impidiendo la identificación de servicios.
 
 Ejecutado por: Máquina Atacante Kali Linux
 
@@ -84,7 +84,7 @@ Conclusión: El firewall de pfSense descartó los paquetes sin enviar respuesta,
 
 **Prueba 2: Prevención de Movimiento Lateral (Escaneo de Servidor)**
 
-Esta es la prueba principal que valida la Regla Zero Trust (Capa 5): confirmar que el atacante (VLAN Usuarios) no puede alcanzar un servidor crítico en la VLAN Servidores (10.0.10.5).
+Esta es la prueba principal que valida la Regla Zero Trust (Capa 5): confirmar que el atacante VLAN-USERS no puede alcanzar un servidor crítico en la VLAN-SERVERS 10.0.10.5.
 
 Ejecutado por: Maquina atacante Admin-WorkStation 
 
