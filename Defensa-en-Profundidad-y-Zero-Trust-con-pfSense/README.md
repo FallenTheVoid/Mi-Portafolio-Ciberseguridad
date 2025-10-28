@@ -45,7 +45,7 @@ Actúa como la primera línea de defensa, bloqueando tráfico de malware, phishi
 
 **Capa 2: Detección Suricata IDS**
 
-Se configuró en modo solo Detección (IDS) en todas las iterfaces Wan, VLAN-USERS, VLAN-SERVER. Su rol es monitorear el tráfico entrante, registrar y alertar al administrador sobre patrones de ataque sin bloquear activamente.
+Se configuró en modo solo Detección (IDS) en todas las interfaces Wan, VLAN-USERS, VLAN-SERVER. Su rol es monitorear el tráfico entrante, registrar y alertar al administrador sobre patrones de ataque sin bloquear activamente.
 
 <img width="1154" height="196" alt="Screenshot 2025-10-28 125537" src="https://github.com/user-attachments/assets/954f6758-e0bf-4a76-87f5-4704cd7700ad" />
 
