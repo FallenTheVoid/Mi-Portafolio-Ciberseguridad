@@ -66,7 +66,7 @@ Zero Trust (Regla): Se implementó una regla de Bloqueo Explícito que prohíbe 
 
 ## Pruebas de Validación y Arquitectura ZERO TRUST
 
-Se realizaron pruebas de penetración utilizando la Máquina Atacante Kali Linux para validar la efectividad del firewall y se uso la maquina Admin-WorkStation para validar la efectividad de la política de Zero Trust contra un intruso simulado.
+Las pruebas incluyeron simulaciones ofensivas desde Kali Linux para evaluar el comportamiento del firewall, y validaciones desde la Admin-Workstation en VLAN_USERS para confirmar el bloqueo de tráfico no autorizado bajo el modelo Zero Trust.
 
 **Ocultamiento del Firewall Escaneo de Gateway**
 Esta prueba verificó que el gateway de la VLAN_SERVERS 10.0.10.1 estuviera oculto de la máquina atacante, impidiendo la identificación de servicios.
