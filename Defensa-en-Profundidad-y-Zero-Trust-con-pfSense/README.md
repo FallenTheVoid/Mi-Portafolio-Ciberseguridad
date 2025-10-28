@@ -95,6 +95,6 @@ Comando: nmap -A -T4 10.0.10.5
 
 Resultado: Host seems down. If it is really up, but blocking our ping probes, try -Pn y Nmap done: 1 IP address (0 hosts up).
 
-El firewall descartó el tráfico ICMP y TCP del Nmap (lo que hace que el host parezca "down"), confirmando que la Workstation NO PUDO alcanzar el Servidor.
+El firewall descartó el tráfico ICMP y TCP del Nmap, lo que hace que el host parezca "down", confirmando que la Workstation no pudo alcanzar el Servidor.
 
 
