@@ -25,8 +25,7 @@ Este proyecto fue desarrollado con fines académicos, aplicando buenas práctica
 
 **Cómo ejecutar el proyecto**
 
-- Clona el repositorio:
-git clone https://github.com/tu-usuario/sigep.git
+- Clona el repositorio
 
 - Instala dependencias del backend:
 pip install flask sqlalchemy
