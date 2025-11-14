@@ -1,0 +1,173 @@
+/* Modal base */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Mostrar modal */
+.modal.show {
+  display: flex;
+}
+
+/* Contenido del modal */
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Botones dentro del modal */
+.modal-content button {
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-content button#btn-registrar-turno {
+  background-color: #007bff;
+  color: white;
+}
+
+.modal-content button#btn-cancelar-turno {
+  background-color: #ccc;
+  color: #333;
+}
+
+/* Contenedor con scroll horizontal si es necesario */
+.tabla-wrapper {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+/* Tabla principal */
+#tabla-turnos {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+}
+
+/* Encabezados */
+#tabla-turnos thead th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 2px solid #ccc;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* Celdas */
+#tabla-turnos td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: left;
+}
+
+/* Botón editar */
+#tabla-turnos td button.btn-editar-turno {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#tabla-turnos td button.btn-editar-turno:hover {
+  background-color: #0056b3;
+}
+
+/* Alternar color de filas */
+#tabla-turnos tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* Zona de resumen de turnos */
+.resumen-turnos {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 1200px;
+  text-align: center;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Tarjeta individual */
+.turno-item {
+  flex: 1 1 250px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  padding: 2rem 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.turno-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Ícono decorativo */
+.turno-item i {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+/* Título */
+.turno-item p {
+  font-size: 1.3rem;
+  color: #333;
+  margin: 0;
+}
+
+/* Valor */
+.turno-item span {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #222;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #tabla-turnos {
+    font-size: 0.85rem;
+  }
+
+  #tabla-turnos td,
+  #tabla-turnos th {
+    padding: 0.5rem;
+  }
+}

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIGEP - Panel Administrativo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style_modal/style_modal_perfil.css">
+  <link rel="stylesheet" href="style_modal/style_modal_empleados.css">
+  <link rel="stylesheet" href="style_modal/style_modal_turnos.css">
+  <link rel="stylesheet" href="style_modal/style_modal_pagos.css">
+  <link rel="stylesheet" href="style_modal/style_modal_recibos.css">
+  <link rel="stylesheet" href="style_modal/style_modal_reporte.css">
+<body>
+  <button id="toggle-menu" class="menu-toggle">☰</button>  
+  <div class="container">
+    <!-- Menú lateral -->
+    <aside class="sidebar">
+      <h2>SIGEP</h2>
+      <div class="user-info">
+        <div class="icon-perfil">
+        <i class="fas fa-user-circle"></i>
+        </div>
+      <div class="datos-perfil">
+        <h3>Richard Ramírez Montoya</h3>
+        <p>Administrador</p>
+        </div>
+      </div>
+      <nav>
+        <button class="menu-btn" data-target="perfil"><i class="fas fa-user"></i> Perfil</button>
+        <button class="menu-btn" data-target="empleados"><i class="fas fa-users"></i> Empleados</button>
+        <button class="menu-btn" data-target="turnos"><i class="fas fa-clock"></i> Turnos</button>
+        <button class="menu-btn" data-target="pagos"><i class="fas fa-money-bill-wave"></i> Pagos</button>
+        <button class="menu-btn" data-target="recibos"><i class="fas fa-file-invoice"></i> Recibos</button>
+        <button class="menu-btn" data-target="reportes"><i class="fas fa-chart-bar"></i> Reportes</button>
+      </nav>
+      <button class="menu-btn logout-btn" data-target="cerrar"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</button>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="content">
+      <!-- PERFIL -->
+    <section id="perfil" class="section active">
+     <h2>Perfil</h2>
+     <div class="perfil-container">
+       <!-- Columna Izquierda -->
+        <div class="perfil-lateral">
+            <div class="avatar">
+           <i class="fas fa-user-circle"></i>
+        </div>
+         <h3>Richard Ramírez Montoya</h3>
+         <p class="cargo">Administrador TI</p>
+         <p class="departamento">Tecnología</p>
+        </div>
+
+       <!-- Columna derecha -->
+      <div class="perfil-info">
+         <h4>Información Personal</h4>
+         <p><strong>ID Empleado:</strong> <span id="perfil-id" class="editable" contenteditable="false">Adm001</span></p>
+
+         <p><strong>Nombre:</strong> <span id="perfil-nombre" class="editable" contenteditable="false">Richard Ramírez Montoya</span></p>
+
+         <p><strong>Correo:</strong> <span id="perfil-correo" class="editable" contenteditable="false">richard@sigep.com</span></p>
+
+         <p><strong>Teléfono:</strong> <span id="perfil-telefono" class="editable" contenteditable="false">+57 305 666 55 44</span></p>
+
+         <p><strong>Cargo:</strong> <span id="perfil-cargo" class="editable" contenteditable="false">Administrador</span></p>
+
+         <button id="editarBtn" class="edit-btn"><i class="fas fa-edit"></i> Editar perfil</button>
+         <button id="guardar-perfil" class="edit-btn" style="display: none;"><i class="fas fa-save"></i> Guardar cambios</button>
+     </div>
+     </div> 
+    </section>
+
+      <!-- EMPLEADOS -->
+      <section id="empleados" class="section">
+        <h2>Empleados</h2>
+        <div class="form-header">
+          <button id="btn-crear-empleado"><i class="fas fa-user-plus"></i> Crear empleado </button>
+        </div>
+        <div class="resumen">
+            <div class="resumen-item">
+                <i class="fas fa-users"></i>
+                <p>Total empleados: <span id="resumen-total"></span></p>
+            </div>
+            <div class="resumen-item">
+                <i class="fas fa-user-check"></i>
+                <p>Activos: <span id="resumen-activos"></span></p>
+            </div> 
+            <div class="resumen-item">
+                <i class="fas fa-user-times"></i>
+                <p>Inactivos: <span id="resumen-inactivos"></span></p>
+            </div>
+        </div>
+        <div class="filtros">
+          <input type="text" id="filtro-nombre" placeholder="Buscar por nombre" />
+          <input type="text" id="filtro-departamento" placeholder="Departamento" />
+          <select id="filtro-estado">
+            <option value="">Estado</option>
+            <option value="Activo">Activo</option>
+            <option value="Inactivo">Inactivo</option>
+          </select>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Cargo</th>
+              <th>Departamento</th>
+              <th>Fecha ingreso</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-empleados"></tbody>
+        </table>
+      </section>
+
+      <!-- TURNOS -->
+      <section id="turnos" class="section">
+        <h2>Turnos</h2>
+        <div class="form-header">
+          <button id="btn-asignar-turno" type="button"><i class="fas fa-calendar-plus"></i> Asignar turno</button>
+        </div>
+        <div class="resumen-turnos">
+         <div class="turno-item">
+         <i class="fas fa-calendar-day"></i>
+         <p>Turnos hoy: <span id="resumen-turnos-hoy"></span></p>
+        </div>
+        <div class="turno-item">
+         <i class="fas fa-hourglass-half"></i>
+         <p>En curso: <span id="turnos-curso"></span></p>
+       </div>
+       <div class="turno-item">
+         <i class="fas fa-calendar-check"></i>
+         <p>Programados: <span id="resumen-turnos-programados"></span></p>
+      </div>
+     </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Id Turno</th>
+              <th>Empleado</th>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Hora Inicio</th>
+              <th>Hora Fin</th>
+              <th>Editar</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-turnos"></tbody>
+        </table>
+      </section>
+
+      <!-- PAGOS -->
+      <section id="pagos" class="section">
+        <h2>Pagos</h2>
+        <div class="form-header">
+          <button id="btn-abrir-modal-pago"> <i class="fas fa-money-check-alt"></i> Registrar pago</button>
+        </div>
+        <div class="resumen-pagos">
+        <div class="pago-item">
+          <i class="fas fa-coins"></i>
+          <p>Total pagado: <span id="resumen-total-pagado"></span></p>
+       </div>
+        <div class="pago-item">
+         <i class="fas fa-check-circle"></i>
+         <p>Completados: <span id="resumen-pagos-completados"></span></p>
+       </div>
+        <div class="pago-item">
+         <i class="fas fa-clock"></i>
+         <p>Pendientes: <span id="resumen-pagos-pendientes"></span></p>
+       </div>
+      </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Monto</th>
+              <th>Fecha</th>
+              <th>Método</th>
+              <th>Estado</th>
+              <th>Detalles</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-pagos"></tbody>
+        </table>
+      </section>
+
+      <!-- RECIBOS -->
+      <section id="recibos" class="section">
+        <h2>Recibos</h2>
+        <div class="form-header">
+          <button id="btn-abrir-modal-recibo"><i class="fas fa-file-invoice-dollar"></i>Generar recibo</button>
+        </div>
+        <div class="resumen-recibos">
+           <div class="recibo-item">
+             <i class="fas fa-file-alt"></i>
+             <p>Generados: <span id="resumen-generados"></span></p>
+           </div>
+           <div class="recibo-item">
+             <i class="fas fa-download"></i>
+             <p>Descargados: <span id="resumen-descargados"></span></p>
+           </div>
+           <div class="recibo-item">
+             <i class="fas fa-paper-plane"></i>
+             <p>Enviados: <span id="resumen-enviados"></span></p>
+           </div>
+         </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Id Recibo</th>
+              <th>Nombre Cliente</th>
+              <th>Empresa</th>
+              <th>Telefono</th>
+              <th>Concepto</th>
+              <th>Monto</th>
+              <th>Fecha Genero</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-recibos"></tbody>
+        </table>
+      </section>
+
+      <!-- REPORTES -->
+      <section id="reportes" class="section">
+        <h2>Reportes</h2>
+        <div class="form-header">
+          <button id="btn-generar-reporte"><i class="fas fa-chart-line"></i> Generar reporte</button>
+        </div>
+        <div class="resumen-reportes">
+         <div class="reporte-item">
+         <i class="fas fa-folder-open"></i>
+         <p>Reportes generados: <span id="resumen-reportes-total"></span></p>
+       </div>
+       <div class="reporte-item">
+         <i class="fas fa-calendar-check"></i>
+         <p>Último reporte generado: <span id="resumen-reportes-nombre"></span></p>
+        </div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Peso</th>
+              <th>Descargar</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-reportes"></tbody>
+        </table>
+      </section>
+
+
+     <!-- Modal editar perfil -->
+     <div id="modal-editar-perfil" class="modal">
+       <div class="modal-content">
+         <h2>Editar Perfil</h2>
+           <input id="modal-nombre" type="text" />
+           <input id="modal-cargo" type="text" />
+           <input id="modal-departamento" type="text" />
+           <input id="modal-fecha" type="date" />
+           <select id="modal-estado">
+             <option>Activo</option>
+             <option>Inactivo</option>
+           </select>
+           <button id="guardar-modal">Guardar</button>
+       </div>
+     </div>
+
+
+      <!-- Modal empleados-->
+  <div id="modal-empleado" class="modal">
+   <div class="modal-content">
+     <h3>Registrar nuevo empleado</h3>
+     <input type="text" id="empleado-id" placeholder="ID Empleado"/>
+     <input type="text" id="empleado-nombre" placeholder="Nombre completo" />
+     <input type="email" id="empleado-correo" placeholder="Correo electrónico" />
+     <input type="tel" id="empleado-telefono" placeholder="Teléfono" />
+     <input type="text" id="empleado-cargo" placeholder="Cargo" />
+     <input type="text" id="empleado-departamento" placeholder="Departamento"/>
+     <button id="btn-registrar" type="button">Registrar</button>
+     <button id="btn-cerrar-modal">Cancelar</button>
+   </div>
+ </div>
+
+      <!-- Modal turnos-->
+  <div id="modal-turno" class="modal">
+   <div class="modal-content">
+     <h3>Asignar turno</h3>
+       <label for="turno-empleado-id">Empleado:</label>
+       <select id="turno-empleado-id">
+         <option value="">Selecciona un empleado</option>
+       </select>
+       <input type="text" placeholder="Cargo" id="turno-cargo" disabled />
+
+     <div class="horario">
+       <label for="turno-fecha">Fecha:</label>
+       <input type="date" id="turno-fecha" />
+
+       <label for="turno-inicio">Hora inicio:</label>
+       <input type="time" id="turno-inicio" />
+
+       <label for="turno-fin">Hora fin:</label>
+       <input type="time" id="turno-fin" />
+     </div>
+
+     <div class="botones-turno">
+       <button id="btn-registrar-turno" type="button">Aceptar</button>
+       <button id="btn-cancelar-turno" type="button">Cancelar</button>
+     </div>
+   </div>
+ </div>
+
+    <!-- Modal pagos -->
+ <div id="modal-pago" class="modal">
+   <div class="modal-content">
+     <h3>Registrar pago</h3>
+
+     <input type="text" id="pago-empleado-id" placeholder="ID o nombre del empleado"/>
+     <input type="text" placeholder="Cargo" id="pago-cargo" disabled />
+
+     <label for="pago-fecha">Fecha de pago:</label>
+     <input type="date" id="pago-fecha" />
+
+     <label for="pago-monto">Monto (Cop):</label>
+     <input type="number" id="pago-monto" min="0" step="0.01" />
+
+     <label for="pago-metodo">Método de pago:</label>
+     <select id="pago-metodo">
+       <option value="">Selecciona método</option>
+       <option value="Transferencia">Transferencia</option>
+       <option value="Cheque">Cheque</option>
+     </select>
+
+     <label for="pago-justificante">Justificante de pago:</label>
+     <select id="pago-justificante">
+       <option value="">Selecciona justificante</option>
+       <option value="Salario">Salario</option>
+       <option value="Horas-extra">Horas extra</option>
+       <option value="comisiones">comisiones</option>
+       <option value="Bonificaciones">Bonificaciones</option>
+     </select>
+
+     <label for="pago-estado">Estado del pago:</label>
+     <select id="pago-estado">
+       <option value="">Selecciona estado</option>
+       <option value="Completado">Completado</option>
+       <option value="Pendiente">Pendiente</option>
+     </select>
+
+     <div class="botones-pago">
+       <button id="btn-registrar-pago">Registrar</button>
+       <button id="btn-cancelar-pago">Cancelar</button>
+     </div>
+   </div>
+ </div>
+
+
+      <!-- Modal recibo -->
+     <div id="modal-recibo" class="modal">
+       <div class="modal-content">
+         <h3>Recibo de pago</h3>
+
+         <div class="recibo-formulario">
+           <label for="recibo-id">Id Recibo</label>
+           <input id="recibo-id" type="text" placeholder="Id Recibo" />
+
+           <label for="recibo-cliente">Cliente</label>
+           <input id="recibo-cliente" type="text" placeholder="Nombre del cliente" />
+
+           <label for="recibo-empresa">Empresa</label>
+           <input id="recibo-empresa" type="text" placeholder="Empresa" />
+
+           <label for="recibo-telefono">Teléfono</label>
+           <input id="recibo-telefono" type="tel" placeholder="Teléfono de contacto" />
+
+           <label for="recibo-concepto">Concepto</label>
+           <textarea id="recibo-concepto" placeholder="Concepto del recibo"></textarea>
+
+           <label for="recibo-monto">Monto</label>
+           <input id="recibo-monto" type="number" placeholder="Monto del recibo" />
+
+           <label for="recibo-fecha">Fecha</label>
+           <input id="recibo-fecha" type="date" />
+
+            <label for="estado-recibo">Estado</label>
+            <select id="estado-recibo"> 
+               <option value="">Selecciona estado</option>
+               <option value="Pendiente">Pendiente</option>
+               <option value="Pagado">Pagado</option>
+             </select>
+         </div>
+
+         <div class="botones-recibo">
+           <button id="btn-registrar-recibo">Registrar recibo</button>
+           <button id="btn-cancelar-recibo">Cerrar</button>
+         </div>
+       </div>
+     </div>
+
+     <!-- Modal reporte -->
+   <div id="modal-reporte" class="modal">
+     <div class="modal-content">
+       <h3>Generar reporte</h3>
+
+       <label for="reporte-tipo">Tipo de reporte:</label>
+       <select id="reporte-tipo">
+         <option value="">Selecciona tipo</option>
+         <option value="Turnos">Turnos</option>
+         <option value="Pagos">Pagos</option>
+         <option value="Recibos">Recibos</option>
+       </select>
+
+       <label for="reporte-inicio">Fecha inicio:</label>
+       <input type="date" id="reporte-inicio" />
+
+       <label for="reporte-fin">Fecha fin:</label>
+       <input type="date" id="reporte-fin" />
+
+       <label for="reporte-formato">Formato:</label>
+       <select id="reporte-formato">
+         <option value="PDF">PDF</option>
+         <option value="Excel">Excel</option>
+       </select>
+
+       <div class="botones-reporte">
+         <button id="btn-generar-reporte-modal">Generar</button>
+         <button id="btn-cancelar-reporte">Cancelar</button>
+       </div>
+     </div>
+   </div>
+
+      <!-- CERRAR SESIÓN -->
+      <section id="cerrar" class="section">
+        <h2>¿Seguro que quieres cerrar sesión?</h2>
+        <div class="form-header">
+          <button id="btn-confirmar-cierre">Aceptar</button>
+          <button id="btn-cancelar-cierre">Cancelar</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+ <!-- Scripts logica y datos-->
+  <script src="js_admin/config.js"></script>
+  <script src="js_admin/app.js"></script>
+  <script src="js_admin/resumen_global.js" defer></script>
+  <script src="js_admin/tabla_empleados.js" defer></script>
+  <script src="js_admin/tabla_turnos.js" defer></script>
+  <script src="js_admin/tabla_pagos.js" defer></script>
+  <script src="js_admin/tabla_recibos.js" defer></script>
+  <script src="js_admin/tabla_reportes.js" defer></script>
+
+ <!-- Script modal-->  
+  <script src="modales/modal_perfil.js" defer></script>
+  <script src="modales/modal_empleado.js" defer></script>
+  <script src="modales/modal_turno.js" defer></script>
+  <script src="modales/modal_pago.js" defer></script>
+  <script src="modales/modal_recibo.js" defer></script>
+  <script src="modales/modal_reporte.js" defer></script>
+  <script src="debug/global_debug.js"></script>
+
+</body>
+</html>

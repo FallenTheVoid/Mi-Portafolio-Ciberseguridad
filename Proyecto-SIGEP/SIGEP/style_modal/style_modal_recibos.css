@@ -1,0 +1,175 @@
+/* Modal recibos */
+#modal-recibo {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+#modal-recibo.show {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+}
+
+#modal-recibo .modal-content {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 360px;
+  max-width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#modal-recibo input,
+#modal-recibo select,
+#modal-recibo textarea {
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#modal-recibo label {
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.botones-recibo {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.botones-recibo button {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  min-width: 100px;
+}
+
+#btn-registrar-recibo {
+  background-color: var(--accent, #28a745);
+  color: white;
+}
+
+#btn-cancelar-recibo {
+  background-color: #ccc;
+  color: #333;
+}
+
+/* Tabla recibos */
+#tabla-recibos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  overflow-x: auto;
+}
+
+#tabla-recibos th,
+#tabla-recibos td {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+#tabla-recibos th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+/* Zona de resumen de recibos */
+.resumen-recibos {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 1200px;
+  text-align: center;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.recibo-item {
+  flex: 1 1 250px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  padding: 2rem 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recibo-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.recibo-item i {
+  font-size: 2.5rem;
+  color: #ffc107; 
+  margin-bottom: 1rem;
+}
+
+.recibo-item p {
+  font-size: 1.3rem;
+  color: #333;
+  margin: 0;
+}
+
+.recibo-item span {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #222;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #modal-recibo .modal-content {
+    width: 95%;
+    padding: 1.2rem;
+  }
+
+  #tabla-recibos th,
+  #tabla-recibos td {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+  }
+
+  .botones-recibo {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .botones-recibo button {
+    width: 100%;
+  }
+
+  .resumen-recibos {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
